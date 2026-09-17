@@ -54,7 +54,7 @@ export default function RequestStaffPage() {
                 <div>
                   <h2 className="font-sans text-3xl font-bold mb-2">Request Submitted</h2>
                   <p className="text-brand-slate max-w-md mx-auto">
-                    {state.message} Our UK staffing Admins have been alerted and will reach out to you within the hour.
+                    {state.message} Our UK workforce coordinators have been alerted and will reach out to you within the hour.
                   </p>
                   {state.mockMode && (
                     <p className="text-xs text-amber-600 bg-amber-50 px-3 py-1.5 rounded-full w-fit mx-auto mt-4 font-semibold border border-amber-200">

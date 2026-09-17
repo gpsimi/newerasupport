@@ -73,6 +73,7 @@ export default function ContactPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
+                    priority
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-brand-navy/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">

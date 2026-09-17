@@ -19,7 +19,12 @@ import { NAV_ITEMS, COMPANY_CONTACT } from "@/constants/website";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-brand-canvas shadow-sm">
@@ -87,80 +92,89 @@ export default function Navbar() {
 
         {/* SHADCN MOTION MOBILE SHEET NAVBAR DRAWER */}
         <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <button
-                className="p-2 text-brand-navy hover:text-brand-mint focus:outline-hidden transition-colors cursor-pointer rounded-lg hover:bg-brand-canvas"
-                aria-label="Open Navigation Menu"
-              >
-                <Menu className="w-6 h-6" />
-              </button>
-            </SheetTrigger>
+          {mounted ? (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="p-2 text-brand-navy hover:text-brand-mint focus:outline-hidden transition-colors cursor-pointer rounded-lg hover:bg-brand-canvas"
+                  aria-label="Open Navigation Menu"
+                >
+                  <Menu className="w-6 h-6" />
+                </button>
+              </SheetTrigger>
 
-            <SheetContent side="right" className="flex flex-col justify-between w-full max-w-xs sm:max-w-sm p-6 bg-white">
-              <div className="flex flex-col gap-6">
-                <SheetHeader className="text-left border-b border-brand-canvas pb-4">
-                  <SheetTitle className="flex items-center">
-                    <Image
-                      src="/logos/logo-1.png"
-                      alt="New Era Support Logo"
-                      width={180}
-                      height={45}
-                      className="h-7 sm:h-8 w-auto object-contain"
-                    />
-                  </SheetTitle>
-                </SheetHeader>
+              <SheetContent side="right" className="flex flex-col justify-between w-full max-w-xs sm:max-w-sm p-6 bg-white">
+                <div className="flex flex-col gap-6">
+                  <SheetHeader className="text-left border-b border-brand-canvas pb-4">
+                    <SheetTitle className="flex items-center">
+                      <Image
+                        src="/logos/logo-1.png"
+                        alt="New Era Support Logo"
+                        width={180}
+                        height={45}
+                        className="h-7 sm:h-8 w-auto object-contain"
+                      />
+                    </SheetTitle>
+                  </SheetHeader>
 
-                {/* STAGGERED FRAMER MOTION MOBILE LINKS */}
-                <StaggerContainer staggerChildren={0.08} delayChildren={0.15} className="flex flex-col gap-2 font-semibold">
-                  {NAV_ITEMS.map((item) => {
-                    const isActive = pathname === item.href;
-                    return (
-                      <StaggerItem key={item.href}>
-                        <SheetClose asChild>
-                          <Link
-                            href={item.href}
-                            className={`py-2.5 px-3 rounded-xl transition-colors text-base font-bold flex items-center ${
-                              isActive
-                                ? "text-brand-mint bg-brand-canvas"
-                                : "text-brand-navy hover:text-brand-mint hover:bg-brand-canvas"
-                            }`}
-                          >
-                            <span>{item.label}</span>
-                          </Link>
-                        </SheetClose>
-                      </StaggerItem>
-                    );
-                  })}
-                </StaggerContainer>
-              </div>
+                  {/* STAGGERED FRAMER MOTION MOBILE LINKS */}
+                  <StaggerContainer staggerChildren={0.08} delayChildren={0.15} className="flex flex-col gap-2 font-semibold">
+                    {NAV_ITEMS.map((item) => {
+                      const isActive = pathname === item.href;
+                      return (
+                        <StaggerItem key={item.href}>
+                          <SheetClose asChild>
+                            <Link
+                              href={item.href}
+                              className={`py-2.5 px-3 rounded-xl transition-colors text-base font-bold flex items-center ${
+                                isActive
+                                  ? "text-brand-mint bg-brand-canvas"
+                                  : "text-brand-navy hover:text-brand-mint hover:bg-brand-canvas"
+                              }`}
+                            >
+                              <span>{item.label}</span>
+                            </Link>
+                          </SheetClose>
+                        </StaggerItem>
+                      );
+                    })}
+                  </StaggerContainer>
+                </div>
 
-              {/* SHEET FOOTER & CTAs */}
-              <div className="flex flex-col gap-4 pt-6 border-t border-brand-canvas">
-                <SheetClose asChild>
-                  <Link href="/request-staff">
-                    <Button variant="secondary" size="md" className="w-full flex items-center justify-center gap-2 shadow-sm">
-                      Request Staff <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </Link>
-                </SheetClose>
+                {/* SHEET FOOTER & CTAs */}
+                <div className="flex flex-col gap-4 pt-6 border-t border-brand-canvas">
+                  <SheetClose asChild>
+                    <Link href="/request-staff">
+                      <Button variant="secondary" size="md" className="w-full flex items-center justify-center gap-2 shadow-sm">
+                        Request Staff <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </SheetClose>
 
-                <div className="bg-brand-canvas p-4 rounded-2xl border border-brand-slate/10 flex flex-col gap-2 text-xs">
-                  <div className="flex items-center gap-2 font-bold text-brand-navy">
-                    <Clock className="w-3.5 h-3.5 text-brand-mint shrink-0" />
-                    <span>24/7 Rapid Deployment Line</span>
-                  </div>
-                  <Link href={`tel:${COMPANY_CONTACT.phone}`} className="font-extrabold text-sm text-brand-navy hover:text-brand-mint transition-colors">
-                    {COMPANY_CONTACT.phone}
-                  </Link>
-                  <div className="flex items-center gap-1.5 text-[10px] text-brand-slate pt-1 border-t border-brand-slate/10">
-                    <MapPin className="w-3 h-3 text-brand-navy" />
-                    <span>{COMPANY_CONTACT.address.short}</span>
+                  <div className="bg-brand-canvas p-4 rounded-2xl border border-brand-slate/10 flex flex-col gap-2 text-xs">
+                    <div className="flex items-center gap-2 font-bold text-brand-navy">
+                      <Clock className="w-3.5 h-3.5 text-brand-mint shrink-0" />
+                      <span>24/7 Rapid Deployment Line</span>
+                    </div>
+                    <Link href={`tel:${COMPANY_CONTACT.phone}`} className="font-extrabold text-sm text-brand-navy hover:text-brand-mint transition-colors">
+                      {COMPANY_CONTACT.phone}
+                    </Link>
+                    <div className="flex items-center gap-1.5 text-[10px] text-brand-slate pt-1 border-t border-brand-slate/10">
+                      <MapPin className="w-3 h-3 text-brand-navy" />
+                      <span>{COMPANY_CONTACT.address.short}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          ) : (
+            <button
+              className="p-2 text-brand-navy hover:text-brand-mint focus:outline-hidden transition-colors cursor-pointer rounded-lg hover:bg-brand-canvas"
+              aria-label="Open Navigation Menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          )}
         </div>
       </div>
     </header>

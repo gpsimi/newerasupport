@@ -49,7 +49,7 @@ export const ClientRequestConfirmation = ({
       <Text style={paragraph}>
         {shiftUrgency === "Immediate" ? (
           <span style={urgentNotice}>
-            ⚡ <strong>Immediate Dispatch Notice:</strong> Because you requested immediate cover, a senior Admin is actively matching available, vetted personnel for your location right now.
+            ⚡ <strong>Immediate Dispatch Notice:</strong> Because you requested immediate cover, our senior Workforce Coordination team is actively matching available, vetted personnel for your location right now.
           </span>
         ) : (
           "A dedicated account manager will review your rota dates and contact you shortly to confirm placement details."

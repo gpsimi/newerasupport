@@ -131,7 +131,7 @@ export default function page() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1 */}
             <StaggerItem>
-              <HoverCard className="bg-white p-8 rounded-3xl shadow-md border border-brand-canvas flex flex-col justify-between h-full">
+              <HoverCard className="bg-white p-8 rounded-3xl border border-brand-canvas flex flex-col justify-between h-full">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center mb-6">
                     <UserCheck className="w-6 h-6 text-brand-navy" />
@@ -153,7 +153,7 @@ export default function page() {
 
             {/* Card 2 */}
             <StaggerItem>
-              <HoverCard className="bg-white p-8 rounded-3xl shadow-md border border-brand-canvas flex flex-col justify-between h-full">
+              <HoverCard className="bg-white p-8 rounded-3xl border border-brand-canvas flex flex-col justify-between h-full">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center mb-6">
                     <Zap className="w-6 h-6 text-red-600" />
@@ -175,7 +175,7 @@ export default function page() {
 
             {/* Card 3 */}
             <StaggerItem>
-              <HoverCard className="bg-white p-8 rounded-3xl shadow-md border border-brand-canvas flex flex-col justify-between h-full">
+              <HoverCard className="bg-white p-8 rounded-3xl border border-brand-canvas flex flex-col justify-between h-full">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-brand-navy text-brand-mint flex items-center justify-center mb-6">
                     <ShieldCheck className="w-6 h-6" />
@@ -284,9 +284,9 @@ export default function page() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Sector 1 */}
               <StaggerItem>
-                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 shadow-sm flex flex-col justify-between h-full">
+                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 flex flex-col justify-between h-full">
                   <div>
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-white">
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 border border-white">
                       <Image
                         src="/images/service_healthcare.jpg"
                         alt="Healthcare & Clinical Support"
@@ -315,9 +315,9 @@ export default function page() {
 
               {/* Sector 2 */}
               <StaggerItem>
-                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 shadow-sm flex flex-col justify-between h-full">
+                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 flex flex-col justify-between h-full">
                   <div>
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-white">
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 border border-white">
                       <Image
                         src="/images/service_catering.jpg"
                         alt="Hospitality & Catering"
@@ -325,7 +325,7 @@ export default function page() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover"
                       />
-                      <div className="absolute bottom-3 right-3 bg-white text-brand-navy w-8 h-8 rounded-full flex items-center justify-center font-extrabold text-xs shadow-md">
+                      <div className="absolute bottom-3 right-3 bg-white text-brand-navy w-8 h-8 rounded-full flex items-center justify-center font-extrabold text-xs">
                         02
                       </div>
                     </div>
@@ -346,9 +346,9 @@ export default function page() {
 
               {/* Sector 3 */}
               <StaggerItem>
-                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 shadow-sm flex flex-col justify-between h-full">
+                <HoverCard className="bg-brand-canvas rounded-3xl p-6 border border-brand-slate/10 flex flex-col justify-between h-full">
                   <div>
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-white">
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 border border-white">
                       <Image
                         src="/images/service_housing.jpg"
                         alt="Facilities & Housing"
@@ -401,7 +401,7 @@ export default function page() {
 
               {/* Overlapping Circular Nurse Portrait Badge */}
               <div className="lg:col-span-4 relative flex justify-center lg:justify-end">
-                <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-brand-mint shadow-2xl">
+                <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-brand-mint">
                   <Image
                     src="/images/mission_nurse_portrait.jpg"
                     alt="UK Registered Nurse Portrait"
@@ -410,7 +410,7 @@ export default function page() {
                     className="object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 bg-white text-brand-navy px-4 py-2 rounded-full font-bold text-xs shadow-lg border border-brand-canvas">
+                <div className="absolute -bottom-4 bg-white text-brand-navy px-4 py-2 rounded-full font-bold text-xs border border-brand-canvas">
                   CQC & Safeguarding Aligned
                 </div>
               </div>
@@ -421,9 +421,9 @@ export default function page() {
         {/* SIDE-BY-SIDE CONTACT PREVIEW CARD */}
         <section className="pb-24 max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="bg-white rounded-[32px] p-8 md:p-12 border border-brand-canvas shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="bg-white rounded-[32px] p-8 md:p-12 border border-brand-canvas shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Photo & Contact Info */}
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-md">
+              <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
                 <Image
                   src="/images/contact_caregiver_support.jpg"
                   alt="Caregiver supporting resident"

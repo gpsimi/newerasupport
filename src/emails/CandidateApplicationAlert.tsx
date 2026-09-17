@@ -24,7 +24,7 @@ export default function CandidateApplicationAlert({
   availability = "Full-Time",
 }: CandidateApplicationAlertProps) {
   return (
-    <EmailLayout previewText={`New Candidate Application: ${fullName}`}>
+    <EmailLayout previewText={`New Candidate Application: ${fullName}`} isAdminAlert={true}>
       <Heading style={heading}>Candidate Application Alert</Heading>
       <Text style={subheading}>
         A new candidate application has been received from the web portal.

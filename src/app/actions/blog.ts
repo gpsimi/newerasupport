@@ -432,7 +432,7 @@ export async function notifySubscribersNewPostAction(postTitle: string, postSlug
         await resend.emails.send({
           from: SENDER_EMAIL,
           to: sub.email,
-          subject: `📰 New Healthcare Article: ${postTitle}`,
+          subject: `New Healthcare Article: ${postTitle}`,
           html: `
             <div style="font-family: sans-serif; padding: 20px; color: #0A192F;">
               <h2>${postTitle}</h2>

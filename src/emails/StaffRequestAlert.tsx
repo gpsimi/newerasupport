@@ -24,7 +24,7 @@ export default function StaffRequestAlert({
   notes = "Urgent cover needed for weekend night shifts due to staff sickness.",
 }: StaffRequestAlertProps) {
   return (
-    <EmailLayout previewText={`New Staff Request from ${organizationName}`}>
+    <EmailLayout previewText={`New Staff Request from ${organizationName}`} isAdminAlert={true}>
       <Heading style={heading}>Client Staffing Request Alert</Heading>
       <Text style={subheading}>
         An urgent client staffing request has been logged via the corporate web portal.

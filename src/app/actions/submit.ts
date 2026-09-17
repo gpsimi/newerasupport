@@ -119,7 +119,7 @@ export async function submitClientRequest(prevState: any, formData: FormData): P
           resend.emails.send({
             from: SENDER_EMAIL,
             to: ADMIN_EMAIL,
-            subject: `🚨 Urgent Staff Request: ${validatedData.organizationName} (${validatedData.location})`,
+            subject: `Urgent Staff Request: ${validatedData.organizationName} (${validatedData.location})`,
             react: StaffRequestAlert({
               organizationName: validatedData.organizationName,
               contactName: validatedData.contactName,
@@ -140,6 +140,7 @@ export async function submitClientRequest(prevState: any, formData: FormData): P
               organizationName: validatedData.organizationName,
               requiredRoles: validatedData.requiredRoles,
               shiftUrgency: validatedData.shiftUrgency,
+              location: validatedData.location,
             }),
           }),
         ]);
@@ -261,7 +262,7 @@ export async function submitCandidateApplication(prevState: any, formData: FormD
           resend.emails.send({
             from: SENDER_EMAIL,
             to: ADMIN_EMAIL,
-            subject: `💼 New Candidate Application - ${validatedData.fullName}`,
+            subject: `New Candidate Application - ${validatedData.fullName}`,
             react: CandidateApplicationAlert({
               fullName: validatedData.fullName,
               email: validatedData.email,

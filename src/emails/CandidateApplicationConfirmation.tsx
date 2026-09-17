@@ -52,7 +52,7 @@ export const CandidateApplicationConfirmation = ({
           1. <strong>Compliance Review:</strong> Our recruitment team will review your CV and vetting declarations.
         </Text>
         <Text style={stepItem}>
-          2. <strong>Document Verification:</strong> A Admin will contact you to verify original DBS certificates and UK Right to Work documentation.
+          2. <strong>Document Verification:</strong> Our compliance team will contact you to verify original DBS certificates and UK Right to Work documentation.
         </Text>
         <Text style={stepItem}>
           3. <strong>Orientation & Placements:</strong> Once verified, you will receive shift bookings matching your availability and preferences.

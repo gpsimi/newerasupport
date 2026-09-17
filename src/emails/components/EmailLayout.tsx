@@ -15,9 +15,10 @@ import {
 interface EmailLayoutProps {
   previewText: string;
   children: React.ReactNode;
+  isAdminAlert?: boolean;
 }
 
-export const EmailLayout = ({ previewText, children }: EmailLayoutProps) => {
+export const EmailLayout = ({ previewText, children, isAdminAlert = false }: EmailLayoutProps) => {
   return (
     <Html>
       <Head />
@@ -34,7 +35,7 @@ export const EmailLayout = ({ previewText, children }: EmailLayoutProps) => {
               style={logo}
             />
             <Text style={headerSubtext}>
-              HEALTHCARE, HOUSING & HOSPITALITY STAFFING SOLUTIONS
+              {isAdminAlert ? "INTERNAL OPERATIONAL PORTAL ALERT" : "HEALTHCARE, HOUSING & HOSPITALITY STAFFING SOLUTIONS"}
             </Text>
           </Section>
 
@@ -43,16 +44,18 @@ export const EmailLayout = ({ previewText, children }: EmailLayoutProps) => {
           {/* MAIN CONTENT AREA */}
           <Section style={content}>{children}</Section>
 
-          {/* URGENT HELPLINE BANNER */}
-          <Section style={helplineBanner}>
-            <Text style={helplineTitle}>Need Immediate Shift Cover?</Text>
-            <Text style={helplineText}>
-              24/7 Rapid Response Hotline:{" "}
-              <Link href="tel:07950850970" style={helplineLink}>
-                07950 850970
-              </Link>
-            </Text>
-          </Section>
+          {/* URGENT HELPLINE BANNER (FOR CLIENT & CANDIDATE EMAILS) */}
+          {!isAdminAlert && (
+            <Section style={helplineBanner}>
+              <Text style={helplineTitle}>Need Immediate Shift Cover?</Text>
+              <Text style={helplineText}>
+                24/7 Rapid Response Hotline:{" "}
+                <Link href="tel:07950850970" style={helplineLink}>
+                  07950 850970
+                </Link>
+              </Text>
+            </Section>
+          )}
 
           {/* FOOTER */}
           <Hr style={hr} />
